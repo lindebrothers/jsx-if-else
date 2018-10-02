@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 
 export class If extends Component {
-  static propTypes = { statement: PropTypes.bool.isRequired }
+
   constructor() {
     super()
     this.renderIf = this.renderIf.bind(this)
@@ -49,11 +49,12 @@ export class If extends Component {
     }
   }
 }
+If.propTypes = { statement: PropTypes.bool.isRequired }
 
 export class Else extends React.Component {
-  static propTypes = { operator: PropTypes.oneOf(['else']) }
-  static defaultProps = { operator: 'Else' }
   render() {
     return null
   }
 }
+Else.propTypes = { operator: PropTypes.oneOf(['else']) }
+Else.defaultProps = { operator: 'Else' }
