@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "lint": "standard --verbose | snazzy && node my-tests.js",
+    "lint": "standard --verbose | snazzy",
     "autolint": "standard --fix",
     "build": "npm run build:clean && babel src -d lib",
     "build:clean": "rm -rf lib/"
