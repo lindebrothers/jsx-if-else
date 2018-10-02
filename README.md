@@ -27,7 +27,7 @@ export default Component
 ### Code example with else
 If true the 'If' component will render every child located before the 'Else'-tag. If false it will render every child after the 'Else'-tag.
 ```js
-import { If } from 'jsx-if-else'
+import { If, Else } from 'jsx-if-else'
 const isLoggedIn = true
 const Component = myNumber => (
   <div>
