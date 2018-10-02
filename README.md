@@ -9,7 +9,7 @@ $ npm i jsx-if-else --save
 ### Code example
 The statement prop will return a bool value to the component. If true the 'If' component will render its children. If false it will return null.
 ```js
-import { If } from 'lb-jsx-if-statements'
+import { If } from 'jsx-if-else'
 const isLoggedIn = true
 const Component = myNumber => (
   <div>
@@ -27,7 +27,7 @@ export default Component
 ### Code example with else
 If true the 'If' component will render every child located before the 'Else'-tag. If false it will render every child after the 'Else'-tag.
 ```js
-import { If } from 'lb-jsx-if-statements'
+import { If } from 'jsx-if-else'
 const isLoggedIn = true
 const Component = myNumber => (
   <div>
