@@ -11,7 +11,7 @@ The statement prop will return a bool value to the component. If true the 'If' c
 ```js
 import { If } from 'jsx-if-else'
 const isLoggedIn = true
-const Component = myNumber => (
+const Component = () => (
   <div>
     <If statement={isLoggedIn}>
       <div>
@@ -29,7 +29,7 @@ If true the 'If' component will render every child located before the 'Else'-tag
 ```js
 import { If, Else } from 'jsx-if-else'
 const isLoggedIn = true
-const Component = myNumber => (
+const Component = () => (
   <div>
     <If statement={isLoggedIn}>
       <div>

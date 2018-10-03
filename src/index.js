@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export class If extends Component {
-  constructor () {
+  constructor() {
     super()
     this.renderIf = this.renderIf.bind(this)
     this.renderElse = this.renderElse.bind(this)
   }
-  renderIf (children) {
+  renderIf(children) {
     /*
     * If children is not an array there is no upcoming Else
     * so returning right the children away.
@@ -15,7 +15,13 @@ export class If extends Component {
     if (!Array.isArray(children)) {
       return children
     }
-    let sliceIndex = children.findIndex(child => child.props.operator === 'Else')
+    let sliceIndex = children.findIndex(
+      child => {
+        if (Object.prototype.hasOwnProperty.call(child, 'props')) {
+          return child.props.operator === 'Else'
+        }
+      }
+    )
     let result = null
     if (sliceIndex) {
       result = children.slice(0, sliceIndex)
@@ -25,7 +31,7 @@ export class If extends Component {
 
     return result
   }
-  renderElse (children) {
+  renderElse(children) {
     /*
     * If the component's children are not an array there is no Else content
     * so returning null
@@ -35,7 +41,11 @@ export class If extends Component {
     }
     // Find index to know where to slice
     const sliceIndex = children.findIndex(
-      child => child.props.operator === 'Else'
+      child => {
+        if (Object.prototype.hasOwnProperty.call(child, 'props')) {
+          return child.props.operator === 'Else'
+        }
+      }
     )
     if (sliceIndex) {
       // Else were found so slicing
@@ -46,7 +56,7 @@ export class If extends Component {
     }
   }
 
-  render () {
+  render() {
     if (this.props.statement === true) {
       return this.renderIf(this.props.children)
     } else {
@@ -57,7 +67,7 @@ export class If extends Component {
 If.propTypes = { statement: PropTypes.bool.isRequired }
 
 export class Else extends React.Component {
-  render () {
+  render() {
     return null
   }
 }
