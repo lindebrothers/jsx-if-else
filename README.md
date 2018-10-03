@@ -1,5 +1,5 @@
 # jsx-if-else
-A very lightweight and small react component that will let you write simple if and else statement with JSX syntax..
+A very lightweight and small react component that will let you write simple if and else condition with JSX syntax..
 
 ### Getting started
 ```
@@ -7,13 +7,13 @@ $ npm i jsx-if-else --save
 ```
 
 ### Code example
-The statement prop will return a bool value to the component. If true the 'If' component will render its children. If false it will return null.
+The condition prop will return a bool value to the component. If true the 'If' component will render its children. If false it will return null.
 ```js
 import { If } from 'jsx-if-else'
 const isLoggedIn = true
 const Component = () => (
   <div>
-    <If statement={isLoggedIn}>
+    <If condition={isLoggedIn}>
       <div>
           Welcome
       </div>
@@ -31,11 +31,11 @@ import { If, Else } from 'jsx-if-else'
 const isLoggedIn = true
 const Component = () => (
   <div>
-    <If statement={isLoggedIn}>
+    <If condition={isLoggedIn}>
       <div>
           Hello!
       </div>
-    <Else />
+      <Else />
       <div>
           Please, log in!
       </div>
@@ -46,16 +46,16 @@ const Component = () => (
 export default Component
 ```
 
-### The statement prop
-You can write any type of statement within the statement prop. Ex:
+### The condition prop
+You can write any type of condition within the condition prop. Ex:
 
-`statement={someNumberVariable > 0}`
+`condition={someNumberVariable > 0}`
 
-`statement={someNumberVariable < 0}`
+`condition={someNumberVariable < 0}`
 
-`statement={someNumberVariable < 0 || someOtherVariable === true}`
+`condition={someNumberVariable < 0 || someOtherVariable === true}`
 
-`statement={typeof(myFunction) === 'function'}`
+`condition={typeof(myFunction) === 'function'}`
 
 ...and so on.
 

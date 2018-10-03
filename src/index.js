@@ -57,14 +57,14 @@ export class If extends Component {
   }
 
   render() {
-    if (this.props.statement === true) {
+    if (this.props.condition === true) {
       return this.renderIf(this.props.children)
     } else {
       return this.renderElse(this.props.children)
     }
   }
 }
-If.propTypes = { statement: PropTypes.bool.isRequired }
+If.propTypes = { condition: PropTypes.bool.isRequired }
 
 export class Else extends React.Component {
   render() {
