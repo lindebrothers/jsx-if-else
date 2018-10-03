@@ -15,8 +15,14 @@ export class If extends Component {
     if (!Array.isArray(children)) {
       return children
     }
-    const sliceIndex = children.findIndex(child => child.props.operator === 'Else' || child.props.operator === 'ElseIf') || children.length
-    const result = children.slice(0, sliceIndex)
+    let sliceIndex = children.findIndex(child => child.props.operator === 'Else')
+    let result = null
+    if (sliceIndex) {
+      result = children.slice(0, sliceIndex)
+    } else {
+      result = children
+    }
+
     return result
   }
   renderElse (children) {
