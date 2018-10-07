@@ -8,7 +8,7 @@
     "lint": "standard --verbose | snazzy",
     "autolint": "standard --fix",
     "test": "jest",
-    "build": "npm run build:clean && babel src -d lib",
+    "build": "npm run build:clean && babel --ignore **/*.test.js src -d lib",
     "build:clean": "rm -rf lib/"
   },
   "repository": {
@@ -33,21 +33,35 @@
     "react": "^16.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
-    "@babel/register": "^7.0.0",
+    "babel-cli": "^6.6.5",
+    "babel-core": "^6.26.3",
     "babel-jest": "^23.6.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-syntax-trailing-function-commas": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-jest": "^23.2.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "jest": "^23.6.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "snazzy": "^8.0.0",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "transform-runtime": "0.0.0"
   },
   "standard": {
     "ignore": [
       "node_modules/",
-      "lib/"
+      "lib/",
+      "**/*.test.js",
+      "jest.config.js",
+      "setupTest.js"
     ]
-  }
+  },
+  "dependencies": {}
 }

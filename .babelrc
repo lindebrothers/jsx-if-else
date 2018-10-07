@@ -1,9 +1,31 @@
 {
-    "presets": ["@babel/preset-react", "@babel/preset-env"],
-    "plugins": ["transform-object-rest-spread"],
-    "env": {
-      "test": {
-        "presets": [["env"], "react"]
-      }
-    } 
+  "presets": [
+    ["env", {
+      "modules": false
+    }],
+    "react",
+    "stage-3"
+  ],
+  "plugins": ["transform-object-rest-spread"],
+  "ignore": [
+    "lib/**/*"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        "env",
+        "react",
+        "stage-3",
+        "jest"
+      ],
+      "ignore": [
+        "lib/**/*"
+      ]
+    },
+    "build": {
+      "ignore": [
+        "**/*.test.js"
+      ]
+    }
+  }
 }
