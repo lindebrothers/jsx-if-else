@@ -1,6 +1,6 @@
 {
   "name": "jsx-if-else",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A very lightweight and small react component that will let you write simple if and else statement with JSX syntax.",
   "main": "lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com//lindebrothers/jsx-if-else"
+    "url": "https://github.com//lindebrothers/jsx-if-else"
   },
   "keywords": [
     "react",
