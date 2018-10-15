@@ -137,3 +137,36 @@ describe('render with else. with js code in the blocks', () => {
     expect(wrapper2.html()).not.toContain('Welcome')
   })
 })
+
+
+describe('render with components including new if/else.', () => {
+  const arr = ['hello', 'my', 'friend']
+  let TestComponent = ({isTruly, isTruly2}) => (
+    <div>
+      <If condition={isTruly}>
+          <If condition={isTruly2}>
+            Welcome
+          </If>
+        <Else />
+          <If condition={isTruly2}>
+            Welcome
+            {!isTruly &&
+              <p>Welcome</p>
+            }
+            <Else />
+            <div>Not welcome</div>
+          </If>
+      </If>
+    </div>
+  )
+  it('should render first block and not the second', () => {
+    const wrapper = shallow(<TestComponent isTruly={true} isTruly2={true} />)
+    expect(wrapper.html()).toContain('Welcome')
+    expect(wrapper.html()).not.toContain('Not welcome')
+  })
+  it('should render second block and not the first', () => {
+    const wrapper2 = shallow(<TestComponent isTruly={false} isTruly2={false} />)
+    expect(wrapper2.html()).toContain('Not welcome')
+    expect(wrapper2.html()).not.toContain('Welcome')
+  })
+})
